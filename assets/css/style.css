@@ -1,0 +1,201 @@
+/* =========================
+   General Styles
+========================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    scroll-behavior: smooth;
+    
+    background: linear-gradient(to right, #01192e, #00f2fe);
+    color: rgb(255, 255, 255); /* Ensure default text is readable */
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    color: #09022e; /* Make headings always visible */
+}
+
+p {
+    color: #e0e0e0; /* Light grey for readability on dark bg */
+}
+
+/* Override Bootstrap muted text on dark backgrounds */
+.text-muted,
+.text-secondary {
+    color: #a30606 !important; /* Lighter grey for contrast */
+}
+
+/* Skill category containers */
+.skills-category {
+    background: #1e1e2f; /* Dark card background */
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    color: #f5f5f5;
+}
+
+/* =========================
+   About Section Icons
+========================= */
+#about i.fa-graduation-cap {
+    color: #0d6efd; /* Blue for Education */
+}
+
+#about i.fa-briefcase {
+    color: #fd7e14; /* Orange for Experience */
+}
+
+#about i.fa-check {
+    color: #198754; /* Green checkmarks for achievements */
+}
+
+/* =========================
+   About Section Fix
+========================= */
+#about {
+    background: #f8f9fa; /* keep it light for contrast */
+    color: #212529;      /* dark text on light bg */
+}
+
+#about h2,
+#about h3,
+#about h4 {
+    color: #0d6efd; /* blue headings for visibility */
+    font-weight: 700;
+}
+
+#about p {
+    color: #139e36; /* darker text for readability */
+}
+
+#about .text {
+    color: #100236 !important; /* make muted text more visible */
+}
+
+#about .experience-item h5,
+#about .timeline-item h5 {
+    color:  #FFFFF0; /* strong visibility for item titles */
+    font-weight: 600;
+}
+
+#about ul li {
+    color: #222; /* visible list items */
+}
+
+/* =========================
+   Skills Section
+========================= */
+.skills-category {
+    background: #1e1e2f;         /* darker box for contrast */
+    border-radius: 12px;
+    padding: 30px;               /* more breathing room */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    min-height: 100%;            /* ensure equal box height */
+}
+
+.skills-header h4 {
+    font-size: 1.3rem;
+    margin-top: 10px;
+}
+
+.skill-item {
+    margin-bottom: 20px;
+}
+
+
+
+/* Progress bar styling */
+.progress {
+    height: 26x;                 /* thinner but visible */
+    background-color: #2c2f3a;   /* subtle track color */  
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    font-size: 0.7rem;            /* smaller text */
+    font-weight: 600;
+    line-height: 26px;             /* centers text vertically */
+    color: #fff;
+    padding-right: 6px;            /* slight spacing */
+    
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;      /* keeps form centered and not too wide */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* stack inputs vertically */
+    gap: 15px;             /* space between fields */
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.contact-form button {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #e68900;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.contact-form button {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #e68900;
+}
