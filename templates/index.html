@@ -12,20 +12,20 @@
                         <span class="text-primary">IT Specialist</span>
                     </h1>
                     <p class="lead mb-4">
-                        Computer Science educator and IT professional with 6 years of teaching experience at international schools. 
+                        Computer Science educator and IT professional with over 10 years of teaching experience at international schools. 
                         Specializing in programming education, web development, and educational technology integration. 
                         Passionate about coding, robotics education, and developing innovative digital solutions.
                     </p>
                     <div class="hero-stats row g-3 mb-4">
                         <div class="col-sm-3">
                             <div class="stat-item">
-                                <h3 class="h4 text-primary mb-0">6+</h3>
+                                <h3 class="h4 text-primary mb-0">10+</h3>
                                 <small class="text-muted">Years Teaching</small>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="stat-item">
-                                <h3 class="h4 text-primary mb-0">8</h3>
+                                <h3 class="h4 text-primary mb-0">40</h3>
                                 <small class="text-muted">Major Projects</small>
                             </div>
                         </div>
@@ -459,99 +459,61 @@
 <!-- Projects Section -->
 <section id="projects" class="py-5">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-center mb-5">
-                <h2 class="display-5 fw-bold mb-3">Featured Projects</h2>
-                <p class="lead text-muted">
-                    Showcasing technical expertise through real-world applications
-                </p>
-            </div>
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold mb-3">Featured Projects</h2>
+            <p class="lead text-muted">
+                Showcasing technical expertise through real-world applications
+            </p>
         </div>
-        
-        <div class="row g-4">
-            {% for project in projects %}
-            <div class="col-lg-6">
-                <div class="project-card h-100">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            {% if 'School' in project.title %}
-                                <i class="fas fa-school"></i>
-                            {% elif 'Travel' in project.title %}
-                                <i class="fas fa-plane"></i>
-                            {% elif 'Expense' in project.title %}
-                                <i class="fas fa-wallet"></i>
-                            {% elif 'Weather' in project.title %}
-                                <i class="fas fa-cloud-sun"></i>
-                            {% elif 'Hotel' in project.title %}
-                                <i class="fas fa-hotel"></i>
-                            {% elif 'Airline' in project.title %}
-                                <i class="fas fa-plane-departure"></i>
-                            {% elif 'HR' in project.title %}
-                                <i class="fas fa-users-cog"></i>
-                            {% endif %}
-                        </div>
-                        <div class="project-meta">
-                            <h4 class="project-title">{{ project.title }}</h4>
-                            <span class="project-category badge bg-primary">{{ project.category }}</span>
-                        </div>
-                    </div>
-                    
-                    <div class="project-content">
-                        <p class="project-description">{{ project.description }}</p>
-                        
-                        <div class="project-tech">
-                            <h6 class="mb-2">Technologies Used:</h6>
-                            <div class="tech-tags">
-                                {% for tech in project.technologies.split(', ') %}
-                                <span class="badge bg-secondary me-1 mb-1">{{ tech }}</span>
-                                {% endfor %}
-                            </div>
-                        </div>
-                        
-                        <div class="project-type mt-3">
-                            <small class="text-muted">
-                                <i class="fas fa-tag me-1"></i>{{ project.type }}
-                            </small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-container">
+    {% for project in projects %}
+    <div class="project-card">
+        <img src="{{ project.image_url or 'assets/images/default-project.jpg' }}" alt="{{ project.title }}">
+        <h6 class="project-title">{{ project.title }}</h6>
+        <span class="project-category badge bg-primary">{{ project.category }}</span>
+        <div class="project-tech mt-1">
+            {% for tech in project.technologies.split(', ') %}
+            <span class="badge bg-secondary">{{ tech }}</span>
             {% endfor %}
         </div>
-        
-        <div class="row mt-5">
-            <div class="col-text-center">
-                <div class="projects-summary p-4 bg-dark rounded">
-                    <h4 class="mb-3">Technical Expertise Demonstrated</h4>
-                    <div class="row g-3">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="summary-item">
-                                <i class="fas fa-database text-primary mb-2"></i>
-                                <h6>Database Design</h6>
-                                <small class="text-muted">MySQL, SQL Server</small>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="summary-item">
-                                <i class="fas fa-code text-primary mb-2"></i>
-                                <h6>Full-Stack Development</h6>
-                                <small class="text-muted">PHP, JavaScript, HTML/CSS</small>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="summary-item">
-                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                                <h6>Responsive Design</h6>
-                                <small class="text-muted">Bootstrap, CSS Grid</small>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="summary-item">
-                                <i class="fas fa-cogs text-primary mb-2"></i>
-                                <h6>System Integration</h6>
-                                <small class="text-muted">APIs, Third-party Services</small>
-                            </div>
-                        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+        <!-- Technical Expertise Summary -->
+        <div class="projects-summary p-4 bg-dark rounded mt-5 text-center">
+            <h4 class="mb-3">Technical Expertise Demonstrated</h4>
+            <div class="row g-3">
+                <div class="col-md-3 col-sm-6">
+                    <div class="summary-item">
+                        <i class="fas fa-database text-primary mb-2"></i>
+                        <h6>Database Design</h6>
+                        <small class="text-muted">MySQL, SQL Server</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="summary-item">
+                        <i class="fas fa-code text-primary mb-2"></i>
+                        <h6>Full-Stack Development</h6>
+                        <small class="text-muted">PHP, JavaScript, HTML/CSS</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="summary-item">
+                        <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                        <h6>Responsive Design</h6>
+                        <small class="text-muted">Bootstrap, CSS Grid</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="summary-item">
+                        <i class="fas fa-cogs text-primary mb-2"></i>
+                        <h6>System Integration</h6>
+                        <small class="text-muted">APIs, Third-party Services</small>
                     </div>
                 </div>
             </div>
