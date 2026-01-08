@@ -1,24 +1,252 @@
+
+/* =========================
+   General Styles
+========================= */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
+    background: linear-gradient(to right, #01192e, #00f2fe);
+    color: #fff;
+    scroll-behavior: smooth;
 }
+
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    color: #09022e;
+}
+
+p {
+    color: #e0e0e0;
+}
+
+/* Sections */
 section {
-    padding: 50px;
-    border-bottom: 1px solid #ddd;
+    padding: 50px 0;
 }
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+
+
+
+/* =========================
+   Summary Section (Projects Summary)
+========================= */
+.projects-summary {
+    background: #1e1e2f;
+    color: #f5f5f5;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
 }
-.project {
-    padding: 15px;
-    border: 1px solid #ccc;
+
+.summary-item {
+    text-align: center;
+}
+
+.summary-item i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #0d6efd;
+}
+
+.summary-item h6 {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.summary-item small {
+    color: #ccc;
+}
+
+/* =========================
+   Skills Section
+========================= */
+.skills-category {
+    background: #1e1e2f;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    min-height: 100%;
+    color: #f5f5f5;
+}
+
+.skills-header h4 {
+    font-size: 1.3rem;
+    margin-top: 10px;
+}
+
+.skill-item {
+    margin-bottom: 20px;
+}
+
+.progress {
+    height: 26px;
+    background-color: #2c2f3a;
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    font-size: 0.7rem;
+    font-weight: 600;
+    line-height: 26px;
+    color: #fff;
+    padding-right: 6px;
+    text-align: center;
+}
+
+/* =========================
+   Contact Form
+========================= */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: none;
     border-radius: 8px;
-    background: #f9f9f9;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
 }
-.success {
-    color: green;
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.contact-form button {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #e68900;
+}
+
+/* =========================
+   About Section
+========================= */
+#about {
+    background: #f8f9fa;
+    color: #212529;
+}
+
+#about h2, #about h3, #about h4 {
+    color: #0d6efd;
+    font-weight: 700;
+}
+
+#about p {
+    color: #139e36;
+}
+
+#about .text {
+    color: #100236 !important;
+}
+
+#about .experience-item h5,
+#about .timeline-item h5 {
+    color:  #FFFFF0;
+    font-weight: 600;
+}
+
+#about ul li {
+    color: #222;
+}
+
+/* About Icons */
+#about i.fa-graduation-cap { color: #0d6efd; }
+#about i.fa-briefcase { color: #fd7e14; }
+#about i.fa-check { color: #198754; }
+
+/* =========================
+   Utility / Overrides
+========================= */
+.text-muted, .text-secondary { color: #a30606 !important; }
+
+/* =========================
+   PROJECTS GRID — HARD OVERRIDE
+========================= */
+/* =========================
+   PROJECTS GRID
+========================= */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+/* Card */
+.project-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+}
+
+/* Image */
+.project-image {
+    height: 160px; /* 🔥 SMALL IMAGE */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Content */
+.project-content {
+    padding: 1rem;
+}
+
+.project-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Tech Stack */
+.project-tech {
+    margin-top: 0.5rem;
+}
+
+.project-tech .badge {
+    margin: 2px;
+    font-size: 0.7rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }

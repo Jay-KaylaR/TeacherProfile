@@ -1,22 +1,52 @@
 <!-- Projects Section -->
-<section id="projects" class="py-5" style="background: linear-gradient(135deg, #000428, #004e92); color: white;">
+<section id="projects" class="py-5">
   <div class="container">
+
     <div class="text-center mb-5">
-      <h2 class="display-5 fw-bold">Projects</h2>
+      <h2 class="display-5 fw-bold">Featured Projects</h2>
+      <p class="text-muted">Showcasing real-world applications</p>
     </div>
 
-    <div class="projects-container">
+    <!-- GRID -->
+    <div class="projects-grid">
+
       <?php
       $stmt = $pdo->query("SELECT * FROM projects ORDER BY title DESC");
+
       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-          echo "<div class='project shadow-sm'>";
-          echo "<h4 class='fw-bold text-info'>" . htmlspecialchars($row['title']) . "</h4>";
-          echo "<p class='text-light'>" . htmlspecialchars($row['description']) . "</p>";
-          echo "<p><strong>Technologies:</strong> " . htmlspecialchars($row['technologies']) . "</p>";
-          echo "<p><strong>Category:</strong> " . htmlspecialchars($row['project_type']) . "</p>";
-          echo "</div>";
-      }
+
+        $image = !empty($row['image'])
+          ? htmlspecialchars($row['image'])
+          : 'assets/images/default-project.jpg';
       ?>
+        <div class="project-card">
+
+          <!-- IMAGE -->
+          <div
+            class="project-image"
+            style="background-image: url('<?= $image ?>');">
+          </div>
+
+          <!-- CONTENT -->
+          <div class="project-content">
+            <h6 class="project-title"><?= htmlspecialchars($row['title']) ?></h6>
+
+            <span class="badge bg-primary mb-2">
+              <?= htmlspecialchars($row['project_type']) ?>
+            </span>
+
+            <div class="project-tech">
+              <?php
+              foreach (explode(',', $row['technologies']) as $tech) {
+                echo "<span class='badge bg-secondary'>" . htmlspecialchars(trim($tech)) . "</span>";
+              }
+              ?>
+            </div>
+          </div>
+
+        </div>
+      <?php } ?>
+
     </div>
   </div>
 </section>
